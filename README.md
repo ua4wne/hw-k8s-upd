@@ -54,4 +54,23 @@
 
 ![undo](./task1/undo.png)
 
->После запуска процедуры отката не рабочие поды были удалены, а вместо них были запущены поды последней удачной конфигурации, в нашем случае - это версия 1.28 nginx
+>После запуска процедуры отката нерабочие поды были удалены, а вместо них были запущены поды последней удачной конфигурации, в нашем случае - это версия 1.28 nginx
+
+## Задание 3*. Создать Canary deployment
+
+1. Создать два deployment'а приложения nginx.
+
+>[nginx-20.yml](./nginx-20.yml) [nginx-25.yml](./nginx-25.yml) [nginx-svc-20.yml](./nginx-svc-20.yml) [nginx-svc-25.yml](./nginx-svc-25.yml)
+
+2. При помощи разных ConfigMap сделать две версии приложения — веб-страницы.
+
+>[conf-map-20.yml](./conf-map-20.yml) [conf-map-25.yml](./conf-map-25.yml)
+
+3. С помощью ingress создать канареечный деплоймент, чтобы можно было часть трафика перебросить на разные версии приложения.
+
+[ingress-20.yml](./ingress-20.yml) [ingress-25.yml](./ingress-25.yml)
+
+![canary-deploy](./task3/canary-deploy.png)
+![ingress](./task3/ingress.png)
+![check](./task3/check.png)
+
